@@ -5,7 +5,7 @@ function getRandomHexColor() {
 const inputEl = document.getElementsByTagName('input')[0];
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
-const boxEl = document.querySelector('#boxes')
+const boxContainerEl = document.querySelector('#boxes')
 
 
 
@@ -13,9 +13,9 @@ createBtn.addEventListener('click', createBoxes);
 
 destroyBtn.addEventListener('click', destroyBoxes);
 
+//варіант 1: створює нові елементи. При кожному рендері розміри елементів починаються зі стартового значення.
 
-
-function createBoxes() {
+/*function createBoxes() {
 
   let newElements = [];
   
@@ -30,13 +30,40 @@ function createBoxes() {
 
   }
 
- boxEl.append(...newElements)
-};
+ boxContainerEl.append(...newElements)
+};*/
 
+
+//варіант 2: створює нові елементи. При кожному рендері розміри елементів продовжують збільшуватись.
+
+function createBoxes() {
+
+  let newElements = [];
+  let elementSize = 30;
+  for (let i = 0; i < inputEl.value; i += 1) {
+    const element = document.createElement('div');
+
+    element.style.backgroundColor = getRandomHexColor();
+    newElements.push(element);
+  }
+  boxContainerEl.append(...newElements)
+
+  const newBoxEl = boxContainerEl.querySelectorAll("div");
+  newBoxEl.forEach((box) => {
+   elementSize += 10;
+   box.style.width = `${elementSize}px`
+   box.style.height = `${elementSize}px`
+  
+})
+};
 
 function destroyBoxes() {
-  boxEl.innerHTML = "";
+  boxContainerEl.innerHTML = "";
 };
+
+
+
+
 
 
 
