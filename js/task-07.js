@@ -7,4 +7,4 @@ const changeFontSize = () => {
     textEl.style.fontSize = `${size}px`;
 };
 
-inputEl.addEventListener('change', changeFontSize);
+inputEl.addEventListener('input', changeFontSize);

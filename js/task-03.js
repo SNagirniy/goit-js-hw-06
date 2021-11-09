@@ -19,7 +19,7 @@ galleryListEl.style.display = 'flex';
 galleryListEl.style.listStyle = 'none';
 galleryListEl.style.justifyContent = 'center';
 
-const galleryItemEl = images.map((image) => `<li class="gallery__item"><img class="gallery__image" src = ${image.url} alt = ${image.alt} width=480px height=320px <li>`
+const galleryItemEl = images.map((image) => `<li class="gallery__item"><img class="gallery__image" src = ${image.url} alt = '${image.alt}' width=480px height=320px <li>`
 ).join("");
 
 galleryListEl.insertAdjacentHTML("afterbegin", galleryItemEl);

@@ -16,7 +16,6 @@ destroyBtn.addEventListener('click', destroyBoxes);
 
 
 function createBoxes() {
-  destroyBoxes();
 
   let newElements = [];
   
@@ -30,6 +29,7 @@ function createBoxes() {
     newElements.push(element);
 
   }
+
  boxEl.append(...newElements)
 };
 
@@ -37,6 +37,7 @@ function createBoxes() {
 function destroyBoxes() {
   boxEl.innerHTML = "";
 };
+
 
 
 

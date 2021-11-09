@@ -5,6 +5,7 @@ const outOfFocus = () => {
 
     if (inputEl.value.length !== Number(maxLength)) {
         inputEl.classList.add('invalid')
+        inputEl.classList.remove('valid')
     } else {
         inputEl.classList.remove('invalid')
         inputEl.classList.add('valid')
