@@ -40,21 +40,24 @@ function createBoxes() {
 
   let newElements = [];
   let elementSize = 30;
+
+
   for (let i = 0; i < inputEl.value; i += 1) {
     const element = document.createElement('div');
-
     element.style.backgroundColor = getRandomHexColor();
+    
     newElements.push(element);
-  }
-  boxContainerEl.append(...newElements)
+  };
+  boxContainerEl.append(...newElements);
 
   const newBoxEl = boxContainerEl.querySelectorAll("div");
-  newBoxEl.forEach((box) => {
-   elementSize += 10;
-   box.style.width = `${elementSize}px`
-   box.style.height = `${elementSize}px`
-  
-})
+    newBoxEl.forEach((box) => {
+      box.style.width = `${elementSize}px`
+      box.style.height = `${elementSize}px`
+
+      elementSize += 10;
+    
+  })
 };
 
 function destroyBoxes() {
